@@ -27,8 +27,9 @@ release_status = "Development Status :: 4 - Beta"
 url = "https://github.com/googleapis/python-network-management"
 dependencies = [
     "google-api-core[grpc] >= 1.31.5, <3.0.0dev,!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0",
-    "proto-plus >= 1.15.0",
-    "packaging >= 14.3",
+    "proto-plus >= 1.15.0, <2.0.0dev",
+    "packaging >= 14.3, <22.0.0dev",
+    "protobuf<4.0.0dev",
 ]
 
 package_root = os.path.abspath(os.path.dirname(__file__))
