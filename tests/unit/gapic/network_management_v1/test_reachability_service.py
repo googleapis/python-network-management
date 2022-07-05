@@ -2572,7 +2572,6 @@ def test_reachability_service_transport_auth_adc(transport_class):
     [
         transports.ReachabilityServiceGrpcTransport,
         transports.ReachabilityServiceGrpcAsyncIOTransport,
-        transports.ReachabilityServiceRestTransport,
     ],
 )
 def test_reachability_service_transport_auth_gdch_credentials(transport_class):
