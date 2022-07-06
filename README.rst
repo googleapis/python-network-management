@@ -3,7 +3,7 @@ Python Client for Network Management API API
 
 |stable| |pypi| |versions|
 
-`Network Management API API`_: 
+`Network Management API API`_: provides a collection of network performance monitoring and diagnostic capabilities.
 
 - `Client Library Documentation`_
 - `Product Documentation`_
