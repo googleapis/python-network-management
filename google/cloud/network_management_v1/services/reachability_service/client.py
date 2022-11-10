@@ -16,7 +16,18 @@
 from collections import OrderedDict
 import os
 import re
-from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union, cast
+from typing import (
+    Dict,
+    Mapping,
+    MutableMapping,
+    MutableSequence,
+    Optional,
+    Sequence,
+    Tuple,
+    Type,
+    Union,
+    cast,
+)
 
 from google.api_core import client_options as client_options_lib
 from google.api_core import exceptions as core_exceptions
@@ -64,7 +75,7 @@ class ReachabilityServiceClientMeta(type):
 
     def get_transport_class(
         cls,
-        label: str = None,
+        label: Optional[str] = None,
     ) -> Type[ReachabilityServiceTransport]:
         """Returns an appropriate transport class.
 
@@ -347,7 +358,7 @@ class ReachabilityServiceClient(metaclass=ReachabilityServiceClientMeta):
         self,
         *,
         credentials: Optional[ga_credentials.Credentials] = None,
-        transport: Union[str, ReachabilityServiceTransport, None] = None,
+        transport: Optional[Union[str, ReachabilityServiceTransport]] = None,
         client_options: Optional[Union[client_options_lib.ClientOptions, dict]] = None,
         client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
     ) -> None:
@@ -445,11 +456,13 @@ class ReachabilityServiceClient(metaclass=ReachabilityServiceClientMeta):
 
     def list_connectivity_tests(
         self,
-        request: Union[reachability.ListConnectivityTestsRequest, dict] = None,
+        request: Optional[
+            Union[reachability.ListConnectivityTestsRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListConnectivityTestsPager:
         r"""Lists all Connectivity Tests owned by a project.
@@ -559,11 +572,11 @@ class ReachabilityServiceClient(metaclass=ReachabilityServiceClientMeta):
 
     def get_connectivity_test(
         self,
-        request: Union[reachability.GetConnectivityTestRequest, dict] = None,
+        request: Optional[Union[reachability.GetConnectivityTestRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> connectivity_test.ConnectivityTest:
         r"""Gets the details of a specific Connectivity Test.
@@ -662,13 +675,15 @@ class ReachabilityServiceClient(metaclass=ReachabilityServiceClientMeta):
 
     def create_connectivity_test(
         self,
-        request: Union[reachability.CreateConnectivityTestRequest, dict] = None,
+        request: Optional[
+            Union[reachability.CreateConnectivityTestRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
-        test_id: str = None,
-        resource: connectivity_test.ConnectivityTest = None,
+        parent: Optional[str] = None,
+        test_id: Optional[str] = None,
+        resource: Optional[connectivity_test.ConnectivityTest] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation.Operation:
         r"""Creates a new Connectivity Test. After you create a test, the
@@ -822,12 +837,14 @@ class ReachabilityServiceClient(metaclass=ReachabilityServiceClientMeta):
 
     def update_connectivity_test(
         self,
-        request: Union[reachability.UpdateConnectivityTestRequest, dict] = None,
+        request: Optional[
+            Union[reachability.UpdateConnectivityTestRequest, dict]
+        ] = None,
         *,
-        update_mask: field_mask_pb2.FieldMask = None,
-        resource: connectivity_test.ConnectivityTest = None,
+        update_mask: Optional[field_mask_pb2.FieldMask] = None,
+        resource: Optional[connectivity_test.ConnectivityTest] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation.Operation:
         r"""Updates the configuration of an existing ``ConnectivityTest``.
@@ -970,10 +987,12 @@ class ReachabilityServiceClient(metaclass=ReachabilityServiceClientMeta):
 
     def rerun_connectivity_test(
         self,
-        request: Union[reachability.RerunConnectivityTestRequest, dict] = None,
+        request: Optional[
+            Union[reachability.RerunConnectivityTestRequest, dict]
+        ] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation.Operation:
         r"""Rerun an existing ``ConnectivityTest``. After the user triggers
@@ -1079,11 +1098,13 @@ class ReachabilityServiceClient(metaclass=ReachabilityServiceClientMeta):
 
     def delete_connectivity_test(
         self,
-        request: Union[reachability.DeleteConnectivityTestRequest, dict] = None,
+        request: Optional[
+            Union[reachability.DeleteConnectivityTestRequest, dict]
+        ] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation.Operation:
         r"""Deletes a specific ``ConnectivityTest``.
